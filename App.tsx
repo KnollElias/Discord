@@ -13,10 +13,9 @@ import { OverlayProvider, Chat, Theme, DeepPartial } from "stream-chat-expo";
 import AuthContext from "./src/contexts/AuthContext";
 import { StreamColors } from "./src/constants/Colors";
 import { Amplify, Auth } from "aws-amplify";
-// import { withAuthenticator } from "aws-amplify-react-native";
-// import awsconfig from "./src/aws-exports";
+const awsconfig = {};
 
-// Amplify.configure({ ...awsconfig, Analytics: { disabled: true } });
+Amplify.configure({ ...awsconfig, Analytics: { disabled: true } });
 
 const API_KEY = "tmdq3ta7ah6k";
 const client = StreamChat.getInstance(API_KEY);
@@ -41,13 +40,13 @@ function App() {
   } else {
     return (
       <SafeAreaProvider>
-        <AuthContext client={client}>
+        <AuthContext.Provider value={client}>
           <OverlayProvider value={{ style: theme }}>
             <Chat client={client}>
               <Navigation colorScheme={"dark"} />
             </Chat>
           </OverlayProvider>
-        </AuthContext>
+        </AuthContext.Provider>
         <StatusBar style="light" />
       </SafeAreaProvider>
     );
