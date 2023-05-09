@@ -24,7 +24,7 @@
     "@react-navigation/native-stack": "^6.1.0",
     "aws-amplify": "^4.3.16",
     "aws-amplify-react-native": "^6.0.3",
-    "expo": "~44.0.0",
+    "expo": "~47.0.0",
     "expo-asset": "~8.4.4",
     "expo-blur": "~11.0.0",
     "expo-constants": "~13.0.0",
